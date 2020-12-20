@@ -11,6 +11,9 @@ jobs:
       - checkout
       - kubernetes/install-kubectl
       - kubernetes/install-kubeconfig
+      - run:
+          name: jhj
+          command: echo ${KUBECONFIG_DATA}
 workflows:
   build-test:
     jobs:
