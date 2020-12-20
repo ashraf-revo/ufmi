@@ -11,9 +11,13 @@ jobs:
       - checkout
       - kubernetes/install-kubectl
       - kubernetes/install-kubeconfig
+      - aws-eks/update-kubeconfig-with-authenticator:
+          cluster-name: revo_test
+          install-kubectl: true
+          aws-region: eu-west-2
       - run:
-          name: jhj
-          command: echo ${KUBECONFIG_DATA}
+          name: hg
+          command: kubectl get nodes
 workflows:
   build-test:
     jobs:
