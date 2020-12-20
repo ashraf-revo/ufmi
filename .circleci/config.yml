@@ -6,8 +6,7 @@ orbs:
 
 jobs:
   build:
-    docker:
-      - image: hashicorp/terraform:0.14.3
+    executor: aws-eks/python3
     steps:
       - checkout
       - kubernetes/install-kubectl
