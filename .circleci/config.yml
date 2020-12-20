@@ -22,3 +22,4 @@ workflows:
   build-test:
     jobs:
       - build
+#./mvnw clean install jib:build -Djib.to.auth.username=$DOCKER_USERNAME -Djib.to.auth.password=$DOCKER_PASSWORD -Dbuild.number=RestAPIBi
