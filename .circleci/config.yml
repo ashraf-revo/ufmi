@@ -1,0 +1,18 @@
+version: 2.1
+orbs:
+  kubernetes: circleci/kubernetes@0.11.2
+  aws-eks: circleci/aws-eks@0.2.0
+  aws-ecr: circleci/aws-ecr@3.1.0
+
+jobs:
+  build:
+    docker:
+      - image: hashicorp/terraform:0.14.3
+    steps:
+      - checkout
+      - kubernetes/install-kubectl
+      - kubernetes/install-kubeconfig
+workflows:
+  build-test:
+    jobs:
+      - build
